@@ -9,11 +9,11 @@ body{
     overflow-x: hidden;
 }
 
-.features-container .features-description{
+.custom-features-container .features-description{
     color: #4A4A4A;
     font-size: 20px;
 }
-.features-container {
+.custom-features-container {
     color: #4A4A4A;
     font-weight: lighter;
 }
@@ -30,11 +30,19 @@ $paragraph-margin-bottom: 0;
 $btn-padding-y: 6px;
 $btn-padding-x: 12px;
 
-*{
-    animation: none !important;
+
+// *{
+//     animation: none !important;
+// }
+
+.feature h3{
+    font-size: 18px;
+    font-weight: 400;
 }
+.feature img{
+    width: 40px;
 
-
+}
 .vh-80{
     height: 80vh;
 }
@@ -130,6 +138,16 @@ $container-max-widths: (
     height: 100%;
 }
 
+.gray-border{
+    border: 2px solid #E6E6E6;
+
+}
+
+.my-6{
+    margin-top:5rem !important;
+    margin-bottom:5rem !important;
+}
+
 .col-border:hover{
     transition: 0.5s;
     border-color: map-get($theme-colors , 'primary' ) ;
@@ -218,6 +236,14 @@ $container-max-widths: (
 .w-s-50{
     width: 50%;
 }
+
+.features-container{
+    background-color: lighten(map-get($theme-colors , 'secondary' ), 59%);
+}
+.feature-icon{
+    background-color: #DFEFF4;
+    border-radius: 10px;
+}
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
@@ -254,18 +280,23 @@ $container-max-widths: (
      .main-title{
          font-size: auto;
      }
-     *{
-        animation: auto !important;
-    }
+    //  *{
+    //     animation: auto !important;
+    // }
 
     
   }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
-   .navbar{
+   .navbar-dark{
        padding-top:32px !important;
        padding-bottom:32px !important;
+       
+   }
+   .navbar-light{
+       padding-top:16px !important;
+       padding-bottom:16px !important;
        
    }
     .agent-app{
@@ -299,21 +330,21 @@ $container-max-widths: (
   }
 
 
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
 
-// // Optional
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
-// @import "../node_modules/bootstrap/scss/images";
-// @import "../node_modules/bootstrap/scss/code";
-// @import "../node_modules/bootstrap/scss/grid";
-// @import "../node_modules/bootstrap/scss/navbar";
-// @import "../node_modules/bootstrap/scss/utilities";
-// @import "../node_modules/bootstrap/scss/buttons";
-// @import "../node_modules/bootstrap/scss/forms";
-// @import "../node_modules/bootstrap/scss/navbar";
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/navbar";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 
