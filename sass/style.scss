@@ -22,6 +22,7 @@ body{
 $theme-colors: (
   "primary": #09BBF9,
   "secondary": #0071BC,
+  "gray": #F4F4F4,
 );
 
 $font-family-base: 'Roboto', sans-serif;
@@ -34,6 +35,13 @@ $btn-padding-x: 12px;
 // *{
 //     animation: none !important;
 // }
+
+.device-image-2{
+
+    max-width: 100%;
+    position: relative;
+}
+
 
 .feature h3{
     font-size: 18px;
@@ -244,6 +252,9 @@ $container-max-widths: (
     background-color: #DFEFF4;
     border-radius: 10px;
 }
+.w-md-100{
+    width: 100%;
+}
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
@@ -284,7 +295,7 @@ $container-max-widths: (
     //     animation: auto !important;
     // }
 
-    
+
   }
 
 // Large devices (desktops, 992px and up)
@@ -315,6 +326,17 @@ $container-max-widths: (
     }
     .main-title{
         font-size: 2.5rem;
+    }
+    .device-image-2{
+        position: absolute;
+        right: -55%;
+        max-width: 100%;
+    }
+    .position-lg-absolute{
+        position: absolute !important;
+    }
+    .w-lg-50{
+        width: 50% !important;
     }
 
    
