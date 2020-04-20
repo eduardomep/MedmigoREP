@@ -1,0 +1,319 @@
+
+@use 'sass:map';
+// Required
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+body{
+    overflow-x: hidden;
+}
+
+.features-container .features-description{
+    color: #4A4A4A;
+    font-size: 20px;
+}
+.features-container {
+    color: #4A4A4A;
+    font-weight: lighter;
+}
+//Custom Theme variables
+
+$theme-colors: (
+  "primary": #09BBF9,
+  "secondary": #0071BC,
+);
+
+$font-family-base: 'Roboto', sans-serif;
+
+$paragraph-margin-bottom: 0;
+$btn-padding-y: 6px;
+$btn-padding-x: 12px;
+
+*{
+    animation: none !important;
+}
+
+
+.vh-80{
+    height: 80vh;
+}
+
+.ornament{
+    position: absolute;
+}
+.top-ornament{
+    top: 0;
+    right: 0;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+}
+.bottom-ornament{
+    left: 0;
+    bottom: 0;
+    animation-delay: 0.5s;
+    animation-duration: 3s;
+}
+.bottom-ornament-secondary{
+    z-index: 1;
+    animation-delay: 0.5s;
+    animation-duration: 1.5s !important;
+}
+
+.fixed-nav{
+    background-color: white;
+}
+.navbar-dark{
+    path{
+        fill: white;
+    }
+}
+
+.navbar{
+    transition: .1s;
+}
+
+.navbar-light{
+    border-bottom: 1px solid #ebeaeb;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    transition: .2s;
+}
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+
+:root {
+    --scrollbarBG: #CFD8DC;
+    --thumbBG: map.get($theme-colors, "primary");
+  }
+  body::-webkit-scrollbar {
+    width: 11px;
+  }
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+
+  
+  
+.tab-button{
+    padding: 6px 24px 6px 24px;
+    border-bottom: solid #CCCCCC 3px ;
+    color: #959595;
+}
+.tab-button-active, .tab-button:hover{
+    color: map.get($theme-colors, "primary") !important ;
+    border-color: map.get($theme-colors, "primary") !important ;
+    cursor: pointer;
+}
+
+.col-border{
+    background: #FFFFFF;
+    border: 2px solid #E6E6E6;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    height: 100%;
+}
+
+.col-border:hover{
+    transition: 0.5s;
+    border-color: map-get($theme-colors , 'primary' ) ;
+}
+.col-border img{
+    transition: 0.5s;
+
+}
+.feature-info{
+    padding:24px 12px 24px 12px !important;
+}
+
+.info-title{
+    font-size: 24px;
+    color: #4A4A4A;
+    margin: 0;
+}
+
+
+.agent-feature-1:hover{
+    img{
+        transform: rotate(2deg) scale(1.1);
+        // transform: scale(1.1);
+    }
+
+
+}
+
+
+
+
+.agent-feature-2 img{
+
+    transform: rotate(-20deg);
+}
+
+.agent-app{
+    position: absolute;
+    z-index: 1;
+    top: -50%;
+    // right: -175%;
+}
+
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+
+}
+.row{ margin-left: 0; margin-right: 0;}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+.main-title{
+    font-size: 20px;
+}
+
+.delay-05s{
+    animation-duration: 0.5s;
+}
+
+.background-container{
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    background: linear-gradient(65.43deg, #06ADEE 3.37%, #08BBF9 25.83%, #06ACED 58.47%, #0071BC 129.9%);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.main-image{
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(255,255,255,0) 100%) url('../img/aplicacion-MedmigoRep.png');
+}
+
+
+.row{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.w-s-50{
+    width: 50%;
+}
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .info-title{
+        font-size: 32px;
+
+    }
+    .feature-info{
+        padding:24px 36px 24px 36px !important;
+    }
+    .w-lg-40{
+        width: 40% !important;
+    }
+        
+    .agent-feature-2 img{
+        position: relative;
+        right: -50%;
+        transform: rotate(-20deg);
+    }
+    .agent-feature-2:hover{
+        img{
+            transition: 0.5s;
+            right: -40%;
+            transform: rotate(-10deg);
+        }
+    }
+
+  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+     .main-title{
+         font-size: auto;
+     }
+     *{
+        animation: auto !important;
+    }
+
+    
+  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+   .navbar{
+       padding-top:32px !important;
+       padding-bottom:32px !important;
+       
+   }
+    .agent-app{
+        right: -175%;
+    }
+
+    .background-container{
+        clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+
+    }
+    .w-lg-100{
+        width: 100% !important;
+    }
+    .vh-md-100{
+        height: 100vh;
+    }
+    .main-title{
+        font-size: 2.5rem;
+    }
+
+   
+    
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .agent-app{
+        right: -140%;
+    }
+
+  }
+
+
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+
+// // Optional
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/code";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "../node_modules/bootstrap/scss/navbar";
+// @import "../node_modules/bootstrap/scss/utilities";
+// @import "../node_modules/bootstrap/scss/buttons";
+// @import "../node_modules/bootstrap/scss/forms";
+// @import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
