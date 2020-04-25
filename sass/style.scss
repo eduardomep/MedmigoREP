@@ -185,24 +185,23 @@ $container-max-widths: (
 }
 
 
-
-
 .agent-feature-2 img{
 
     transform: rotate(-20deg);
 }
 
-.agent-app{
+.agent-app, .company-app{
+    width: 0;
     position: absolute;
     z-index: 1;
     top: -50%;
+    display: none ;
     // right: -175%;
 }
 
 
 .main-container{
     width: 100%;
-    height: 100vh;
 
 }
 .row{ margin-left: 0; margin-right: 0;}
@@ -224,18 +223,61 @@ $container-max-widths: (
 .background-container{
     width: 100%;
     height: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     background: linear-gradient(65.43deg, #06ADEE 3.37%, #08BBF9 25.83%, #06ACED 58.47%, #0071BC 129.9%);
     position: absolute;
     top: 0;
     right: 0;
 }
 
-.main-image{
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(255,255,255,0) 100%) url('../img/aplicacion-MedmigoRep.png');
+ .mid-background-container{
+    padding: 200px 0;
+ 
+    max-height: 40%;
+    position: relative;
+    background: linear-gradient(65.43deg, #06ADEE 3.37%, #08BBF9 25.83%, #06ACED 58.47%, #0071BC 129.9%);
+}
+.mid-background-content{
+    position: relative;
+    z-index: 10;
 }
 
 
+.main-picture{
+    top: -100px;
+}
+.picture-template .picture-template-item{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.14);
+}
+.cut-background{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.main-image{
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 17%, rgba(255,255,255,0) 100%) url('../img/aplicacion-MedmigoRep.png');
+}
+.price-item{
+    border-radius: 10px;
+}
+.price-pill{
+    border-radius: 100px;
+    padding: 6px 12px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    background-color: map-get($theme-colors , "primary" );
+}
+.divider{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 1px;
+    margin: 12px 0;
+}
+.font-weight-500{
+    font-weight: 500 !important;
+}
+.anual-price{
+    font-size: 14px;
+}
 .row{
     padding-left: 16px;
     padding-right: 16px;
@@ -293,6 +335,52 @@ footer{
     background-color: white !important;
     color:map-get($theme-colors, "primary") !important;
 }
+.mockup{
+    display: none;
+}
+.features-dropdown-items{
+    display: none;
+    // padding: 16px 32px;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    border-radius: 4px;
+    z-index: 100;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+.features-dropdown-items .features-dropdown-item{
+    padding: 18px;
+    // margin: 6px;
+}
+.features-dropdown-item:hover{
+    background-color: lighten(map-get($theme-colors , 'secondary' ), 59%);
+
+}
+.nav-item{
+    text-align: center;
+}
+
+// .top-arrow{
+//     position: absolute;
+//     top: -10px;
+//     left:  20px;
+//     background-color: white;
+//     width: 24px;
+//     height: 24px;
+//     border-radius: 4px;
+//     transform: rotate(45deg);
+// }
+.features-dropdown:hover{
+    .features-dropdown-items{
+        display: flex;
+        cursor: pointer;
+    }
+
+}
+// .first-element:hover ~ .top-arrow{
+//         background-color: lighten(map-get($theme-colors , 'secondary' ), 59%)
+// }
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
@@ -313,6 +401,7 @@ footer{
         position: relative;
         right: -50%;
         transform: rotate(-20deg);
+        width: 100px;
     }
     .agent-feature-2:hover{
         img{
@@ -338,6 +427,9 @@ footer{
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { 
+    .nav-item{
+        text-align: left;
+    }
    .navbar-dark{
        padding-top:32px !important;
        padding-bottom:32px !important;
@@ -348,8 +440,9 @@ footer{
        padding-bottom:16px !important;
        
    }
-    .agent-app{
+    .agent-app, .company-app{
         right: -175%;
+        width: 140%;
     }
 
     .background-container{
@@ -380,13 +473,19 @@ footer{
         padding: 54px 125px;
 
     }
+    .mockup{
+        display: block;
+    }
 
  }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-    .agent-app{
+    .agent-app, .company-app{
         right: -140%;
+    }
+    .company-app{
+        top: -100%;
     }
 
   }

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+:root{
+    --bg-color: #F4F4F4;
+    --main-color: #0071BC;
+    --text-color: #767676;
+}
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+   
+
+}
+.under-construction{
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+.under-construction-illustration{
+    background-color: #F4F4F4;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+}
+
+.under-construction-illustration img:first-of-type {
+   max-width: 200px;
+   margin-top: 100px;
+}
+.under-construction-illustration img:last-of-type {
+   max-width: 50%;
+   min-width: 200px;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.under-construction-content{
+    margin-top: 50px;
+}
+
+.under-construction-content  *{
+    margin-top: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+.under-construction-content h1{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+    color: var(--main-color);
+
+}
+.under-construction-content a{
+
+    color: var(--main-color);
+
+}
+.under-construction-content p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: var(--text-color);   
+}
