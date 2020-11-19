@@ -4,6 +4,18 @@ body {
   overflow-x: hidden;
 }
 
+.btn-secondary:visited, .btn-secondary:active {
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  color: white !important;
+}
+
+.label {
+  margin-bottom: 6px;
+}
+
 .custom-features-container .features-description {
   color: #4A4A4A;
   font-size: 20px;
@@ -109,6 +121,10 @@ body::-webkit-scrollbar-thumb {
   color: #09BBF9 !important;
   border-color: #09BBF9 !important;
   cursor: pointer;
+}
+
+.w-200 {
+  width: 200px !important;
 }
 
 .col-border {
@@ -331,6 +347,7 @@ footer li {
 
 .features-dropdown-items .features-dropdown-item {
   padding: 18px;
+  text-decoration: none;
 }
 
 .features-dropdown-item:hover {
@@ -344,6 +361,48 @@ footer li {
 .features-dropdown:hover .features-dropdown-items {
   display: flex;
   cursor: pointer;
+}
+
+.modal-contact {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.425);
+  display: none;
+}
+
+.modal-body label {
+  color: #777777;
+}
+
+.modal-body input {
+  color: #4A4A4A;
+  font-weight: 500;
+}
+
+::placeholder {
+  font-weight: normal;
+}
+
+.modal-contact .modal-dialog {
+  max-width: 750px;
+  width: 100%;
+  min-width: 250px;
+  margin: 0 32px 0 32px;
+  z-index: 1;
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 @media (min-width: 576px) {

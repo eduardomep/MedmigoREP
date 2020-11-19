@@ -13,13 +13,30 @@ let tabButtons = document.querySelectorAll('.tab-button');
             }
 
         }               
-   }
+    }
 })();
 
 // Iterate all buttons
 tabButtons.forEach((tabButton,index) => {
     // Add click event for iterated buttons
     tabButton.addEventListener('click', () => {
+        tabButtons.forEach(tabButton => {
+            if(tabButton.classList.contains("btn-secondary")){
+                if(tabButton.classList.contains("main-tab")){
+
+                }else{
+                    tabButton.classList.remove("btn-secondary");
+                    tabButton.classList.add("btn-outline-light");
+                }
+            }
+        });
+        if(tabButton.classList.contains("main-tab")){
+
+        }else{
+            tabButton.classList.remove("btn-outline-light");
+            tabButton.classList.add("btn-secondary");
+            tabButton.style.color ="White !important";
+        }
         // If the te actual button is not active
         if(!tabButton.classList.contains('tab-button-active')){
             // active the actual button
@@ -33,33 +50,18 @@ tabButtons.forEach((tabButton,index) => {
                         // otherContent[j].classList.remove('d-none');
                         // otherContent[j].classList.add('d-flex');
                         // otherContent[j].classList.add('animated');
-
                         otherContent[j].classList.add('d-none');
                         otherContent[j].classList.remove('d-flex');
-                        
                     }
                     let actualSection = document.querySelectorAll(tabButtons[index].dataset.content)
                     for (let j = 0; j < actualSection.length  ; j++) {
-                        // actualSection[j].classList.add('d-none');
-                        // actualSection[j].classList.remove('d-flex');
                         actualSection[j].classList.remove('d-flex');
                         actualSection[j].classList.remove('d-none');
                         actualSection[j].classList.add('d-flex');
-                        actualSection[j].classList.add('animated');
-
                     }
-                    
                     tabButtons[i].classList.remove('tab-button-active');
-
-                    // (document.querySelector(tabButtons[i].dataset.content)).classList.remove('d-flex');
-                    // (document.querySelector(tabButtons[index].dataset.content)).classList.remove('d-flex');
-                    // (document.querySelector(tabButtons[i].dataset.content)).classList.remove('d-none');
-
-                    // (document.querySelector(tabButtons[i].dataset.content)).classList.add('d-flex');
-                    // (document.querySelector(tabButtons[i].dataset.content)).classList.add('fadeIn');
-                    // (document.querySelector(tabButtons[index].dataset.content)).classList.add('d-none');
                 }               
-           }
+            }
             
         }
     });
